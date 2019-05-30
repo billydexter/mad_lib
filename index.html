@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel = "stylesheet" href = "./style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<title>MAD LIB ONLINE</title>
+</head>
+<body>
+	<div class="my-container">
+	<img src="./MadLibGuy.jpg">
+	<div id="app">
+		<div v-if = "!buttonClicked">
+			<h2>Enter in the words, and then hit the "Create Mad Lib" button to see your hilarious results!</h2>
+			<div class = "row">
+				<h4 class = "bar">Verb that ends with "ing"</h4>
+	      		<input type="text" v-model="firstVerb">
+	      	</div>
+	      	<br>
+			<div class = "row">
+				<h4 class = "bar">Verb that ends with "ed"</h4>
+				<input type="text" v-model="secondVerb">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Verb that ends with "ing"</h4>
+				<input type="text" v-model="thirdVerb">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Plural Noun</h4>
+				<input type="text" v-model="firstNoun">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Verb</h4>
+				<input type="text" v-model="fourthVerb">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Verb that ends with "ing"</h4>
+				<input type="text" v-model="fifthVerb">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Adjective</h4>
+				<input type="text" v-model="firstAdj">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Plural Noun</h4>
+				<input type="text" v-model="secondNoun">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Noun</h4>
+				<input type="text" v-model="thirdNoun">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Noun</h4>
+				<input type="text" v-model="fourthNoun">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Noun</h4>
+				<input type="text" v-model="fifthNoun">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Noun</h4>
+				<input type="text" v-model="sixthNoun">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Verb that ends with "ed"</h4>
+				<input type="text" v-model="sixthVerb">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Plural Noun</h4>
+				<input type="text" v-model="firstPlNoun">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Plural Noun</h4>
+				<input type="text" v-model="secondPlNoun">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Noun</h4>
+				<input type="text" v-model="seventhNoun">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Verb</h4>
+				<input type="text" v-model="seventhVerb">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Adjective</h4>
+				<input type="text" v-model="secondAdj">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Adjective</h4>
+				<input type="text" v-model="thirdAdj">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Verb</h4>
+				<input type="text" v-model="eighthVerb">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Adjective</h4>
+				<input type="text" v-model="fourthAdj">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Plural Noun</h4>
+				<input type="text" v-model="eighthNoun">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Verb</h4>
+				<input type="text" v-model="ninthVerb">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Plural Noun</h4>
+				<input type="text" v-model="ninthNoun">
+			</div>
+			<br>
+			<div class = "row">
+				<h4 class = "bar">Adjective</h4>
+				<input type="text" v-model="fifthAdj">
+			</div>
+			<br>
+			<div v-if = 'filledOutFields'>
+				<button v-on:click="setButtonClicked">See the result!</button>
+			</div>
+			<br>
+			<br>
+		</div>
+		<div v-else>
+			<h1> Ah, BYU. The place where RM's are <i>{{firstVerb}}</i>, the guys are getting <i>{{secondVerb}}</i> by girls on the first date, and you see couples <i>{{thirdVerb}}</i> as you walk to campus. You can visit the Testing Center, where those with <i>{{firstNoun}}</i> will get in trouble because they should <i>{{fourthVerb}}</i>. You can go to the Talmage, where people are <i>{{fifthVerb}}</i> and working on <i>{{firstAdj}}</i> labs all about <i>{{secondNoun}}</i>. The students nickname the Talmage's <i>{{thirdNoun}}</i> the "<i>{{fourthNoun}}</i>". There's a rumor that there is no <i>{{fifthNoun}}</i> in the <i>{{sixthNoun}}</i>, but that isn't true anymore. Times have <i>{{sixthVerb}}</i>. There are a couple of different <i>{{firstPlNoun}}</i> of <i>{{secondPlNoun}}</i> that are at BYU. First are the <i>{{seventhNoun}}</i> bros, who <i>{{seventhVerb}}</i> until they are <i>{{secondAdj}}</i>. Second are the <i>{{thirdAdj}}</i> RM's, who try to <i>{{eighthVerb}}</i> with the <i>{{fourthAdj}}</i> gender every week, and finally there are the <i>{{eighthNoun}}</i>, who like to <i>{{ninthVerb}}</i> on <i>{{ninthNoun}}</i>. Yes, Provo is definitely a <i>{{fifthAdj}}</i> place, but we all call it home.</h1>
+		</div>
+	</div>
+	</div>
+	<p><a href = "https://github.com/billydexter/mad_lib">Link to Github</a></p>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="./script.js"></script>
+</html>
